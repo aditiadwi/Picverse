@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/htmlCode/homepage.html"
+    },
+
+    {
+      "source": "/",
+      "destination": "/images/:path"
+    },
+
+    {
+      "source": "/",
+      "destination": "/House in the field, 1893 - Pablo Picasso - WikiArt.org_files/:path"
+    }
+]
+}
