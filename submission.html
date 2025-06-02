@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PicVerse - Submission Page</title>
+    <link rel="stylesheet" href="submission.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">PicVerse</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="submission.html" class="active">Submission</a>
+            <a href="community.html">Community</a>
+            <a href="aboutus.html">About Us</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>This is where you can submit your artwork</h2>
+            <p>Share your creative work with our community</p>
+        </div>
+
+        <div class="submission-form">
+            <form id="artSubmissionForm" novalidate>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                    <div id="emailError" class="error-message">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required />
+                    <div class="form-instructions">Use capital letters at the beginning of each word</div>
+                    <div id="titleError" class="error-message">Each word must start with a capital letter</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                    <div class="form-instructions">End each sentence with a period (".")</div>
+                    <div id="descriptionError" class="error-message">Each sentence must end with a period (".")</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input type="text" id="tags" name="tags" required />
+                    <div class="form-instructions">Each tag should start with # (e.g., #art #digital)</div>
+                    <div id="tagsError" class="error-message">Each tag must start with # and be separated by spaces</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fileUpload">Upload File</label>
+                    <div class="file-upload">
+                        <input type="text" id="fileDisplayName" placeholder="No file selected" readonly />
+                        <div class="dropdown-container">
+                            <label for="fileUpload" class="file-select-btn" id="fileTypeBtn">Choose File</label>
+                            <input type="file" id="fileUpload" name="fileUpload" accept=".jpg,.jpeg,.png,.gif" style="display: none;" />
+                        </div>
+                    </div>
+                    <div class="form-instructions">Accepted formats: JPG, JPEG, PNG, GIF</div>
+                    <div id="fileError" class="error-message">Please select a valid image file (JPG, PNG, JPEG, GIF)</div>
+
+                    <div id="imagePreviewContainer" style="display: none;">
+                        <img id="imagePreview" alt="Image preview" />
+                        <div id="aiDetectionResult">
+                            <div id="processingIndicator">
+                                <div class="spinner"></div>
+                                <p>Analyzing image...</p>
+                            </div>
+                            <div id="detectionResults" style="display: none;">
+                                <span id="aiDetectionBadge" class="ai-badge">Processing...</span>
+                                <div id="aiAccuracy" style="margin-top: 5px; font-size: 14px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Submit Artwork</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bagian copyright yang ditambahkan -->
+    <div class="copyright-text">
+        &copy; 2025 PicVerse. All Rights Reserved. Digital artwork community platform.
+    </div>
+
+    <script src="submission.js"></script>
+</body>
+</html>
